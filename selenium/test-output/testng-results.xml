@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="38134" started-at="2016-06-21T01:50:23Z" finished-at="2016-06-21T01:51:01Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="38134" started-at="2016-06-21T01:50:23Z" finished-at="2016-06-21T01:51:01Z">
+      <class name="Grid.dataprovider">
+        <test-method status="PASS" signature="grid(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Grid.dataprovider@152c7bf6]" name="grid" duration-ms="29268" started-at="2016-06-21T07:20:23Z" data-provider="data" finished-at="2016-06-21T07:20:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- grid -->
+        <test-method status="PASS" signature="grid(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:Grid.dataprovider@152c7bf6]" name="grid" duration-ms="37978" started-at="2016-06-21T07:20:23Z" data-provider="data" finished-at="2016-06-21T07:21:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- grid -->
+      </class> <!-- Grid.dataprovider -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,87 @@
+package Grid;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class grideg2 
+{
+	@Parameters("Browser")
+	@Test
+	public void grid(String b) throws MalformedURLException
+	{
+		DesiredCapabilities cap=null;
+		if (b.equalsIgnoreCase("firefox"))
+		{
+			cap=DesiredCapabilities.firefox();
+			cap.setBrowserName("firefox");
+			cap.setPlatform(Platform.WINDOWS);
+		}
+		else if (b.equalsIgnoreCase("chrome"))
+		{
+			cap=DesiredCapabilities.chrome();
+			cap.setBrowserName("chrome");
+			cap.setPlatform(Platform.ANY);
+			
+		}
+		
+		
+		WebDriver driver=new RemoteWebDriver(new URL("http://192.168.1.32:4444/wd/hub"), cap);
+	
+		
+		String date="3/july/2017";
+		String[] dsplit=date.split("/");
+		String day=dsplit[0];
+		String month=dsplit[1];
+		String year=dsplit[2];
+		driver.get("http://www.cleartrip.com/");
+		
+		driver.findElement(By.id("DepartDate")).click();
+		//year selection
+		String calyear=driver.findElement(By.className("ui-datepicker-year")).getText();
+		
+		while (!calyear.equals(year))
+		{
+			driver.findElement(By.className("nextMonth ")).click();
+			calyear=driver.findElement(By.className("ui-datepicker-year")).getText();
+		}
+		//month selection
+		
+		String calmonth=driver.findElement(By.className("ui-datepicker-month")).getText();
+		
+		while (!calmonth.equalsIgnoreCase(month))
+		{
+			driver.findElement(By.className("nextMonth ")).click();
+			calmonth=driver.findElement(By.className("ui-datepicker-month")).getText();
+		}
+		
+		//day selection
+		
+		List<WebElement> rows=driver.findElements(By.xpath(".//*[@id='ui-datepicker-div']/div[1]/table/tbody/tr"));
+		for (int i = 0; i < rows.size(); i++)
+		{
+			List<WebElement> cols=rows.get(i).findElements(By.tagName("td"));
+			for (int j = 0; j < cols.size(); j++)
+			{
+				String calday=cols.get(j).getText();
+				if (calday.equals(day))
+				{
+					cols.get(j).click();
+					break;
+				}
+				
+			}
+			
+		}
+	}
+}

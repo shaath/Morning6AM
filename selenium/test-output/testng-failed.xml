@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Grid Suite]" parallel="tests">
+  <parameter name="Browser" value="chrome"/>
+  <test name="Grig Ex1(failed)" parallel="tests">
+    <parameter name="Browser" value="firefox"/>
+    <classes>
+      <class name="Grid.grideg2">
+        <methods>
+          <include name="grid" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- Grid.grideg2 -->
+    </classes>
+  </test> <!-- Grig Ex1(failed) -->
+</suite> <!-- Failed suite [Grid Suite] -->

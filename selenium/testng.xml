@@ -1,0 +1,16 @@
+
+<suite name="Grid Suite" parallel="tests">
+  <test name="Grig Ex1">
+  <parameter name="Browser" value="firefox"/>
+    <classes>
+      <class name="Grid.grideg2"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Grid ex2">
+  <parameter name="Browser" value="chrome"/>
+    <classes>
+      <class name="Grid.grideg2"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

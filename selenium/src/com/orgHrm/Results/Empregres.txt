@@ -1,0 +1,7 @@
+Firstname&Lastname&Result
+Suresh&B&Pass
+Narendar&N&Pass
+Sandeep&G&Pass
+Manikanta&G&Pass
+Siri&M&Pass
+Sharath&G&Pass

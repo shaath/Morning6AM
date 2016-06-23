@@ -1,0 +1,70 @@
+package Grid;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
+
+import org.junit.experimental.theories.DataPoint;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class dataprovider 
+{
+	@Test(dataProvider="data")
+	public void grid(String b,String username,String Password) throws MalformedURLException
+	{
+		System.out.println(b+"----"+username+"-----"+Password);
+		DesiredCapabilities cap=null;
+		if (b.equalsIgnoreCase("firefox"))
+		{
+			cap=DesiredCapabilities.firefox();
+			cap.setBrowserName("firefox");
+			cap.setPlatform(Platform.WINDOWS);
+		}
+		else if (b.equalsIgnoreCase("chrome"))
+		{
+			cap=DesiredCapabilities.chrome();
+			cap.setBrowserName("chrome");
+			cap.setPlatform(Platform.ANY);
+			
+		}
+		
+		
+		WebDriver driver=new RemoteWebDriver(new URL("http://192.168.1.32:4444/wd/hub"), cap);
+	
+		driver.get("http://opensource.demo.orangehrm.com");
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.id("")).sendKeys(username);
+		driver.findElement(By.id("")).sendKeys(Password);
+		driver.findElement(By.id("")).click();
+		
+			
+		
+	}
+	
+	@DataProvider
+	public Object[][] data()
+	{
+		Object[][] s=new Object[2][3];
+		
+		s[0][0]="firefox";
+		s[0][1]="Admin";
+		s[0][2]="admin";
+		
+		s[1][0]="chrome";
+		s[1][1]="Admin";
+		s[1][2]="admin";
+		
+		return s;
+		
+		
+	}
+
+}

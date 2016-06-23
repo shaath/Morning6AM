@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestNGSuite]">
+  <test name="Orghrmsuite(failed)">
+    <classes>
+      <class name="testNG.empregtest">
+        <methods>
+          <include name="org_Logout"/>
+          <include name="org_Launch"/>
+          <include name="org_Login"/>
+        </methods>
+      </class> <!-- testNG.empregtest -->
+      <class name="testNG.userregtest">
+        <methods>
+          <include name="userreg"/>
+        </methods>
+      </class> <!-- testNG.userregtest -->
+    </classes>
+  </test> <!-- Orghrmsuite(failed) -->
+</suite> <!-- Failed suite [TestNGSuite] -->
